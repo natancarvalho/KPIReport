@@ -3,7 +3,7 @@ project(DBConnect)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DBConnect main.cpp includes/functions.h includes/functions.cpp includes/queries.h)
+add_executable(DBConnect main.cpp include/functions.h include/functions.cpp include/queries.h)
 set(CMAKE_EXECUTABLE_SUFFIX cgi)
 
 set(/usr/include/mysql-cppconn-8)
