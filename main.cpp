@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "includes/functions.h"
+#include "include/functions.h"
 
 int main() {
 
