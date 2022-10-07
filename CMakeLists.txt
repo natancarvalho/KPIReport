@@ -4,7 +4,10 @@ project(KPIReport)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(KPIReport main.cpp include/functions.h include/functions.cpp include/queries.h include/events.h lib/events.cpp include/cars.h)
-set(CMAKE_EXECUTABLE_SUFFIX cgi)
+set(CMAKE_EXECUTABLE_SUFFIX .cgi)
+
+install(TARGETS KPIReport
+        DESTINATION /usr/lib/cgi-bin)
 
 set(/usr/include/mysql-cppconn-8)
 include_directories(/usr/include/mysql-cppconn-8/jdbc)

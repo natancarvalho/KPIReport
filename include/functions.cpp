@@ -26,27 +26,13 @@ void cgiPage(){
     cout << "Content-type:text/html\r\n\r\n";
     cout << "<html>\n";
     cout << "<head>\n";
-    cout << "<title>Hello World - First CGI Program</title>\n";
+    cout << "<title>Optimum G KPI Report</title>\n";
     cout << "</head>\n";
     cout << "<body>\n";
-    cout << "<h2>Hello World! This is my first CGI program</h2>\n";
-    cout <<"<table border=\"1\">";
-    cout <<"              <tr>";
-    cout <<"              <td>Nome</td>";
-    cout <<"              <td>Idade</td>";
-    cout <<"              <td>Profissão</td>";
-    cout <<"              </tr>";
-    cout <<"                <tr>";
-    cout <<"                <td>Ted</td>";
-    cout <<"                <td>22</td>";
-    cout <<"                        <td>Estudante</td>";
-    cout <<"                        </tr>";
-    cout <<"                         <tr>";
-    cout <<"                          <td>Ralf</td>";
-    cout <<"                         <td>26</td>";
-    cout <<"                                 <td>Designer</td>";
-    cout <<"                                 </tr>";
-    cout <<"                                   </table>";
+    cout << "<h2>01 - KPI - Lap Time[s]</h2>\n";
+    cout << "<div align=\"center\">\n";
+    cout <<"<iframe src=\"http://localhost:8050\" width=1080 height=600>\n";
+    cout << "</div>\n";
     cout << "</body>\n";
     cout << "</html>\n";
     cout << endl;
@@ -132,7 +118,8 @@ void pythonAPI(){
     //                   "fig = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 16])\n"
     //                   "fig.show()";
     FILE* fp;
-    fp = fopen("/home/natan/OptimumG/Learning/DBConnect/cmake-build-debug/teste.py", "r");
+    fp = fopen("/home/natan/OptimumG/Dev/KPIReport/cmake-build-debug/__main__.py", "r");
+//    Py_RunMain()
     PyRun_AnyFile(fp, " ");
     Py_Finalize();
     fclose(fp);
