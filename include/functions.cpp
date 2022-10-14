@@ -135,21 +135,21 @@ void connectDB(){
     driver = get_driver_instance();
     con = driver->connect("tcp://127.0.0.1:3306", "root", "C@rvalhoBD");
     /* Connect to the MySQL test database */
-    con->setSchema("dadospneus");
+    con->setSchema("mydb");
 // ...
     stmt = con->createStatement();
 // ...
     ofstream out("../csv/dados.csv");
-    res = stmt->executeQuery("SELECT id, Piloto, Pneu FROM dadospneus.treino1 ORDER BY id ASC");
-    out << "id,Piloto,Pneu" << endl;
-//    cout << "id,Piloto,Pneu" << endl;
+    res = stmt->executeQuery("SELECT TotalLapNumber, LapTime, OutingNumber FROM mydb.tb_data ORDER BY id_data ASC");
+    out << "TotalLapNumber,LapTime,OutingNumber" << endl;
+    cout << "TotalLapNumber,LapTime,OutingNumber" << endl;
     while (res->next()) {
 //      You can use either numeric offsets...
-        out << res->getInt(1) << "," << res->getString("Piloto") << "," <<res->getString("Pneu") << endl;
-//        cout << res->getInt(1) << "," << res->getString("Piloto") << "," <<res->getString("Pneu") << endl; // getInt(1) returns the first column
+        out << res->getInt(1) << "," << res->getString("LapTime") << "," <<res->getString("OutingNumber") << endl;
+        cout << res->getInt(1) << "," << res->getString("LapTime") << "," <<res->getString("OutingNumber") << endl; // getInt(1) returns the first column
 //      ... or column names for accessing results.
 //      The latter is recommended.
-//      cout << ", label = '" << res->getString("Pneu") << "'" << endl;
+//      cout << ", label = '" << res->getString("OutingNumber") << "'" << endl;
     }
     out.close();
 

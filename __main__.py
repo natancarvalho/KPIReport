@@ -1,7 +1,10 @@
 # Run this app with `python app.py` and
 # visit http://127.0.0.1:8050/ in your web browser.
+import os
+import signal
+import sys
 
-from dash import Dash, html, dcc, Input, Output
+from dash import Dash, html, dcc, Input, Output, dash_table
 import pandas as pd
 import plotly.express as px
 
@@ -9,18 +12,35 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = Dash(__name__, external_stylesheets=external_stylesheets)
 
+df5 = pd.read_csv('/home/natan/OptimumG/Dev/KPIReport/csv/dados.csv')
+
 app.layout = html.Div([
     html.H4('01 - KPI - Lap Time[s]'),
+    dcc.Store(id="shutdown-permission"),
+    html.Button("Shutdown", id="shutdown-btn"),
     dcc.Graph(id='kpi-lap-times'),
     dcc.RangeSlider(
         id='range-slider',
         min=119000, max=122000, step=500,
-
         value=[0, 122000]
     ),
-    html.Div(id='output-container-range-slider')
+    dash_table.DataTable(
+        data=df5.to_dict('records'),
+        columns=[{'id': c, 'name': c} for c in df5.columns],
+        page_size=10
+    ),
 ])
 
+app.clientside_callback(
+    """
+    function() {
+        return break
+    }
+    """,
+    Output("shutdown-permission", "data"),
+    Input("shutdown-btn", "n_clicks"),
+    prevent_initial_call=True,
+)
 
 @app.callback(
     Output("kpi-lap-times", "figure"),

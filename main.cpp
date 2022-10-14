@@ -40,6 +40,8 @@ int main() {
 
 //    cout << csv_data;
 
+    connectDB();
+
     cgiPage();
 
     pythonAPI();
