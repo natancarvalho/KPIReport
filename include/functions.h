@@ -19,6 +19,6 @@ void connectDB();
 
 vector <string> read_csv_header(const char* pathCSV);
 
-string read_csv_data(const char* pathCSV);
+vector <string> read_csv_data(const char* pathCSV);
 
 #endif //DBCONNECT_FUNCTIONS_H

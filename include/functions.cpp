@@ -181,25 +181,24 @@ vector <string> read_csv_header(const char* pathCSV){
     //cout << endl;
 }
 
-string read_csv_data(const char* pathCSV){
+vector <string> read_csv_data(const char* pathCSV){
     FILE* fp;
     fp = fopen(pathCSV, "rt");
     char *result;
-    char Linha[100];
-    int i = 1;
-    string linha_csv;
+    char Linha[600];
+    int i = 0;
+    vector <string> linha_csv;
 
     while (!feof(fp)){
-        if (i > 6) {
-            // Lê uma linha (inclusive com o '\n')
-            result = fgets(Linha, 100, fp);  // o 'fgets' lê até 99 caracteres ou até o '\n'
+        // Lê uma linha (inclusive com o '\n')
+        result = fgets(Linha, 600, fp);  // o 'fgets' lê até 99 caracteres ou até o '\n'
+        if (i > 10){
             if (result)  // Se foi possível ler
-                linha_csv += Linha;
+                linha_csv.insert(linha_csv.end(), result);
             i++;
         }
-        else {
+        else
             i++;
-        }
     }
 
     fclose(fp);
