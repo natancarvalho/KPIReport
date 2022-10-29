@@ -14,16 +14,15 @@ main.cpp - this file is responsible to call the auxiliars functions and methods 
 
 __main__.py - scrip in Python that create a dashbard using Plotly with the data required on the C++ application.
 
-/include/
-  cars.h - declaration of the class car.
+/include/cars.h - declaration of the class car.
 
-  constants.h - declarition of constants that will be use in the code.
+/include/constants.h - declarition of constants that will be use in the code.
 
-  events.h - declaration of the class events.
+/include/events.h - declaration of the class events.
 
-  functions.cpp - implementantion of any auxiliar function thaht will be use in the code.
+/include/functions.cpp - implementantion of any auxiliar function thaht will be use in the code.
 
-  functions.h - declaration of any auxiliar function that will be use in the code.
+/include/functions.h - declaration of any auxiliar function that will be use in the code.
 
-  queries.h - declaration of any query that will be use in the code.
+/include/queries.h - declaration of any query that will be use in the code.
 
