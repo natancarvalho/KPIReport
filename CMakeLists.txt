@@ -3,7 +3,7 @@ project(KPIReport)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(KPIReport main.cpp include/functions.h include/functions.cpp include/queries.h include/events.h lib/events.cpp include/cars.h include/constants.h)
+add_executable(KPIReport main.cpp include/functions.h include/functions.cpp include/queries.h include/events.h include/events.cpp include/cars.h include/constants.h)
 set(CMAKE_EXECUTABLE_SUFFIX .cgi)
 
 install(TARGETS KPIReport

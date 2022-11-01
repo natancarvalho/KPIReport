@@ -1,7 +1,7 @@
 //
 // Created by natan on 28/09/22.
 //
-#include "../include/events.h"
+#include "events.h"
 
 using namespace std;
 

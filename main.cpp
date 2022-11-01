@@ -21,10 +21,6 @@ int main() {
 
     csv_header = read_csv_header("/home/natan/OptimumG/Dev/KPIReport/OutingsCSV/OriginalOuting1.csv");
 
-//    for (int i; i < 7; i++){
-//        cout << csv_header[i];
-//    }
-
     csv_data = read_csv_data("/home/natan/OptimumG/Dev/KPIReport/OutingsCSV/OriginalOuting1.csv");
 
     csv_data.insert(csv_data.begin(), COLUMN_NAMES);
@@ -41,7 +37,6 @@ int main() {
     }
 
     event.get_name(event_name);
-
 
 //    connectDB();
 //
